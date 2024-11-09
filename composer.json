@@ -1,0 +1,40 @@
+{
+    "name": "hhink/bt-sdk",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hw"
+    ],
+    "description": "bt sdk",
+    "autoload": {
+        "psr-4": {
+            "Hhink\\BtSdk\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "hhink/http-caller": "^1.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "mockery/mockery": "^1.0",
+        "phpstan/phpstan": "^1.0",
+        "phpunit/phpunit": ">=7.0"
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
