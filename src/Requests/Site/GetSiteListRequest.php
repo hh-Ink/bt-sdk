@@ -9,15 +9,24 @@ namespace Hhink\BtSdk\Requests\Site;
 
 use Hhink\BtSdk\Requests\AbstractRequest;
 
-class ListRequest extends AbstractRequest
+class GetSiteListRequest extends AbstractRequest
 {
     protected int $type = -1;
 
+    /**
+     * 页码
+     */
     protected int $p = 1;
 
+    /**
+     * 每页数量.
+     */
     protected int $limit = 10;
 
-    protected $search;
+    /**
+     * 搜索关键字.
+     */
+    protected ?string $search = null;
 
     public function setType(int $type): void
     {
@@ -32,11 +41,6 @@ class ListRequest extends AbstractRequest
     public function setLimit(int $limit): void
     {
         $this->limit = $limit;
-    }
-
-    public function setTable(string $table): void
-    {
-        $this->table = $table;
     }
 
     /**

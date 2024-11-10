@@ -11,6 +11,9 @@ use Hhink\BtSdk\Requests\AbstractRequest;
 
 class GetSiteDomainsRequest extends AbstractRequest
 {
+    /**
+     * 站点ID.
+     */
     protected string $id;
 
     public function setId(string $id): void

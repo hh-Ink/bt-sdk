@@ -43,11 +43,24 @@ class Client extends AbstractServiceClient
     public function request(RequestInterface $request): Result
     {
         $data = $this->getParams($request->getApiParams());
+        print_r($data);
         $method = strtoupper($request->getApiRequestMethod());
         if ($method == 'POST') {
             $option = [
                 'form_params' => $data,
             ];
+        } elseif ($method == 'POST_FILE') {
+            $multipart = [];
+            foreach ($data as $key => $value) {
+                $multipart[] = [
+                    'name' => $key,
+                    'contents' => $value,
+                ];
+            }
+            $option = [
+                'multipart' => $multipart,
+            ];
+            $method = 'POST';
         } else {
             $option = [
                 'query' => $data,

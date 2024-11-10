@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace HyperfTest\Requests\Site;
 
 use Hhink\BtSdk\Client;
-use Hhink\BtSdk\Requests\Site\GetSslRequest;
+use Hhink\BtSdk\Requests\Site\GetSiteSslRequest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class GetSslRequestTest extends TestCase
 {
     public function testGetSslRequest()
     {
-        $request = new GetSslRequest();
+        $request = new GetSiteSslRequest();
         $request->setSiteName('1-test-fulu-api.maishou88.com');
         $client = new Client();
         $client->setAppKey(file_get_contents(dirname(__DIR__, 3) . '/appKey.txt'));

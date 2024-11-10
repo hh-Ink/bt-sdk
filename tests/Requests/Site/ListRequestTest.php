@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace HyperfTest\Requests\Site;
 
 use Hhink\BtSdk\Client;
-use Hhink\BtSdk\Requests\Site\ListRequest;
+use Hhink\BtSdk\Requests\Site\GetSiteListRequest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class ListRequestTest extends TestCase
 {
     public function testListRequest()
     {
-        $request = new ListRequest();
+        $request = new GetSiteListRequest();
         $request->setLimit(1);
         $client = new Client();
         $client->setAppKey(file_get_contents(dirname(__DIR__, 3) . '/appKey.txt'));
