@@ -43,7 +43,6 @@ class Client extends AbstractServiceClient
     public function request(RequestInterface $request): Result
     {
         $data = $this->getParams($request->getApiParams());
-        print_r($data);
         $method = strtoupper($request->getApiRequestMethod());
         if ($method == 'POST') {
             $option = [
