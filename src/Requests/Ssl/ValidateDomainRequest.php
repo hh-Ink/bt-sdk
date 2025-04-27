@@ -19,6 +19,16 @@ class ValidateDomainRequest extends AbstractRequest
      */
     protected string $index;
 
+    public function getIndex(): string
+    {
+        return $this->index;
+    }
+
+    public function setIndex(string $index): void
+    {
+        $this->index = $index;
+    }
+
     public function getApiMethodName(): string
     {
         return '/acme?action=validate_domain';
